@@ -1,0 +1,16 @@
+:root {
+  /* Base */
+  font-size: 10px;
+  font-family: "Exo 2", sans-serif;
+  font-weight: 200;
+  color: #fff;
+
+  /* Set neon color */
+  --neon-red-color: #f40;
+  --neon-blue-color: #08f;
+  --main-background-color: #0c090a;
+}
+
+.hidden {
+  display: none;
+}

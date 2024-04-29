@@ -1,0 +1,89 @@
+.login {
+  width: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.login__wrap {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Animate neon flicker */
+@keyframes flicker {
+  0%,
+  19%,
+  21%,
+  23%,
+  25%,
+  54%,
+  56%,
+  100% {
+    text-shadow: -0.2rem -0.2rem 1rem #fff, 0.2rem 0.2rem 1rem #fff,
+      0 0 2rem var(--neon-red-color), 0 0 4rem var(--neon-red-color),
+      0 0 6rem var(--neon-red-color), 0 0 8rem var(--neon-red-color),
+      0 0 10rem var(--neon-red-color);
+  }
+
+  20%,
+  24%,
+  55% {
+    text-shadow: none;
+  }
+}
+
+.login__question {
+  margin-bottom: 4.5rem;
+  font-size: 8rem;
+  animation: flicker 5s infinite alternate;
+}
+.login__question::-moz-selection {
+  background-color: var(--main-background-color);
+  color: var(--neon-red-color);
+}
+.login__question::selection {
+  background-color: var(--main-background-color);
+  color: var(--neon-red-color);
+}
+
+.login__form {
+  padding: 2rem;
+  border: 0.4rem solid #fff;
+  border-radius: 1.5rem;
+  box-shadow: 0 0 0.3rem #fff, inset 0 0 0.3rem #fff,
+    0 0 1rem var(--neon-red-color), inset 0 0 1rem var(--neon-red-color),
+    0 0 2rem var(--neon-red-color), inset 0 0 2rem var(--neon-red-color);
+}
+.login__form:focus-within {
+  box-shadow: 0 0 0.5rem #fff, inset 0 0 0.5rem #fff,
+    0 0 1.5rem var(--neon-red-color), inset 0 0 1.5rem var(--neon-red-color),
+    0 0 2.5rem var(--neon-red-color), inset 0 0 2.5rem var(--neon-red-color);
+}
+
+.login__input {
+  all: unset;
+  font-size: 2.5rem;
+  text-align: center;
+  text-shadow: -0.1rem -0.1rem 0.5rem #fff, 0.1rem 0.1rem 0.5rem #fff,
+    0 0 1rem var(--neon-red-color), 0 0 2rem var(--neon-red-color);
+}
+
+.login__submit-btn {
+  all: unset;
+  cursor: pointer;
+  font-size: 2.5rem;
+  text-shadow: -0.1rem -0.1rem 0.5rem #fff, 0.1rem 0.1rem 0.5rem #fff,
+    0 0 1rem var(--neon-red-color), 0 0 2rem var(--neon-red-color),
+    0 0 3rem var(--neon-red-color), 0 0 4rem var(--neon-red-color),
+    0 0 5rem var(--neon-red-color);
+}
+.login__submit-btn:hover {
+  text-shadow: -0.2rem -0.2rem 0.8rem #fff, 0.2rem 0.2rem 0.8rem #fff,
+    0 0 1rem var(--neon-red-color), 0 0 2rem var(--neon-red-color),
+    0 0 3rem var(--neon-red-color), 0 0 4rem var(--neon-red-color),
+    0 0 5rem var(--neon-red-color);
+}
