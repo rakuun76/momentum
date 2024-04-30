@@ -10,5 +10,7 @@
 /* components */
 @import "components/login.css";
 @import "components/fade-in-out.css";
+@import "components/username.css";
+@import "components/clock.css";
 @import "components/quote.css";
 @import "components/to-do.css";

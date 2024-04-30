@@ -1,11 +1,24 @@
-.quote {
+.clock {
   position: absolute;
-  bottom: 2rem;
+  top: 50%;
   left: 50%;
-  transform: translateX(-50%);
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   font-size: 4rem;
   text-shadow: -0.2rem -0.2rem 1rem #fff, 0.2rem 0.2rem 1rem #fff,
     0 0 2rem var(--neon-red-color), 0 0 4rem var(--neon-red-color),
     0 0 6rem var(--neon-red-color), 0 0 8rem var(--neon-red-color),
     0 0 10rem var(--neon-red-color);
+}
+
+.clock__date {
+  margin-bottom: 1rem;
+  font-size: 3rem;
+}
+
+.clock__time {
+  font-size: 10rem;
 }
