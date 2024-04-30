@@ -7,22 +7,26 @@ const usernameDiv = document.querySelector(".username");
 const USERNAME_KEY = "username";
 const HIDDEN_CLASSNAME = "hidden";
 
-const paintUsername = (username) => {
-  usernameDiv.innerText = `${username}`;
-  mainContentDiv.classList.remove(HIDDEN_CLASSNAME);
-};
-
 const handleLoginFormSubmit = (event) => {
   event.preventDefault();
-  loginDiv.classList.add(HIDDEN_CLASSNAME);
   localStorage.setItem(USERNAME_KEY, loginInput.value);
-  paintUsername(loginInput.value);
+  usernameDiv.innerText = `${loginInput.value}`;
+  loginDiv.classList.add("fade-out");
 };
 
 const savedUsername = localStorage.getItem(USERNAME_KEY);
 if (savedUsername) {
-  paintUsername(savedUsername);
+  usernameDiv.innerText = `${savedUsername}`;
+  mainContentDiv.classList.remove(HIDDEN_CLASSNAME);
 } else {
   loginDiv.classList.remove(HIDDEN_CLASSNAME);
   loginForm.addEventListener("submit", handleLoginFormSubmit);
 }
+
+document.addEventListener("animationend", (event) => {
+  if (event.animationName === "fade-out") {
+    event.target.classList.add(HIDDEN_CLASSNAME);
+    mainContentDiv.classList.add("fade-in");
+    mainContentDiv.classList.remove(HIDDEN_CLASSNAME);
+  }
+});
