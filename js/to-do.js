@@ -1,6 +1,8 @@
-const toDoForm = document.querySelector(".to-do-form");
-const toDoInput = document.querySelector(".to-do-form__input");
-const toDoList = document.querySelector(".to-do-list");
+const toDoPopUp = document.querySelector(".to-do__pop-up");
+const toDoForm = document.querySelector(".to-do__form");
+const toDoInput = document.querySelector(".to-do__input");
+const toDoList = document.querySelector(".to-do__list");
+const toDoBtn = document.querySelector(".to-do__btn");
 
 const TODOS_KEY = "toDos";
 
@@ -11,8 +13,11 @@ function saveToDos() {
 }
 
 function deleteToDo(event) {
+  event.target.innerText = "✔";
+  event.target.parentElement.childNodes[1].classList.add("line-through");
+
   const li = event.target.parentElement;
-  li.remove();
+  setTimeout(() => li.remove(), 1000);
 
   toDos = toDos.filter((toDo) => toDo.id !== Number(li.id));
   saveToDos();
@@ -20,16 +25,15 @@ function deleteToDo(event) {
 
 function paintToDo(newToDo) {
   const li = document.createElement("li");
+  const div = document.createElement("div");
   const span = document.createElement("span");
-  const button = document.createElement("button");
 
   li.id = newToDo.id;
+  div.addEventListener("click", deleteToDo);
   span.innerText = newToDo.text;
-  button.innerText = "❌";
-  button.addEventListener("click", deleteToDo);
 
+  li.appendChild(div);
   li.appendChild(span);
-  li.appendChild(button);
   toDoList.appendChild(li);
 }
 
@@ -47,7 +51,12 @@ function handleToDoSubmit(event) {
   toDoInput.value = "";
 }
 
+function handleToDoBtnClick() {
+  toDoPopUp.classList.toggle(HIDDEN_CLASSNAME);
+}
+
 toDoForm.addEventListener("submit", handleToDoSubmit);
+toDoBtn.addEventListener("click", handleToDoBtnClick);
 
 const savedToDos = localStorage.getItem(TODOS_KEY);
 if (savedToDos) {
