@@ -3,9 +3,33 @@
   bottom: 2rem;
   left: 50%;
   transform: translateX(-50%);
-  font-size: 4rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   text-shadow: -0.2rem -0.2rem 1rem #fff, 0.2rem 0.2rem 1rem #fff,
     0 0 2rem var(--neon-red-color), 0 0 4rem var(--neon-red-color),
     0 0 6rem var(--neon-red-color), 0 0 8rem var(--neon-red-color),
     0 0 10rem var(--neon-red-color);
+}
+
+.quote__saying {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  transform: translateY(1.5rem);
+  transition: transform 0.5s linear;
+}
+.quote:hover .quote__saying {
+  transform: none;
+}
+
+.quote__author {
+  font-size: 1.8rem;
+  opacity: 0;
+  transform: translateY(-1.5rem);
+  transition: opacity 0.5s linear, transform 0.5s linear;
+}
+.quote:hover .quote__author {
+  transform: none;
+  opacity: 1;
 }

@@ -1,16 +1,11 @@
 const quotes = [
   {
     saying: "Good code is its own best documentation.",
-    author: "Steve McConnell",
-  },
-  {
-    saying:
-      "Fools ignore complexity. Pragmatists suffer it. Some can avoid it. Geniuses remove it.",
-    author: "Alan Perlis",
+    author: "-Steve McConnell-",
   },
   {
     saying: "Good design adds value faster than it adds cost.",
-    author: "Thomas C. Gale",
+    author: "-Thomas C. Gale-",
   },
 ];
 
