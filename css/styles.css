@@ -1,8 +1,8 @@
 @import url(https://fonts.googleapis.com/css?family=Exo+2:200i);
 
 /* config */
-@import "config/_reset.css";
-@import "config/_variables.css";
+@import "config/reset.css";
+@import "config/variables.css";
 
 /* screen */
 @import "screen/index.css";
